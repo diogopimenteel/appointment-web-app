@@ -9,11 +9,11 @@ function Home() {
     <div align="center">
       <Layout title="Select one of the options">
         <div align="center">
-          <Link to="/create-appointment">
+          <Link to="/appointment/new">
             <Button className="m-2">Create appointment</Button>
           </Link>
 
-          <Link to="/show-appointments">
+          <Link to="/appointments">
             <Button>Show appointments</Button>
           </Link>
         </div>
