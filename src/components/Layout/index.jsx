@@ -3,10 +3,14 @@ import { Container } from 'react-bootstrap';
 
 import Card from '../Card';
 
-const index = ({ title, children }) => (
-  <Container className="mt-4" data-test-id="page-test">
-    <Card title={title}>{children}</Card>
-  </Container>
-);
+function index({ title, children }) {
+  return (
+    <div>
+      <Container className="mt-4" data-test-id="layout-test">
+        <Card title={title}>{children}</Card>
+      </Container>
+    </div>
+  );
+}
 
 export default index;
