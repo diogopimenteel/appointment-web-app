@@ -10,7 +10,6 @@ function Router() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/appointments" element={<ShowAppointments />} />
-        <Route path="*" element={<h1>not found</h1>} />
       </Routes>
     </BrowserRouter>
   );
