@@ -6,7 +6,7 @@ import Layout from '../../components/Layout';
 function ShowAppointments() {
   return (
     <div align="center">
-      <Layout title="Appointments marked">
+      <Layout title="List of Appointments">
         <AppointmentList />
       </Layout>
     </div>
