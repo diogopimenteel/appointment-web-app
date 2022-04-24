@@ -1,0 +1,15 @@
+.form-group {
+  position: relative;
+}
+
+.form-control.error {
+  border-color: red;
+}
+
+span[class*='error'] {
+  position: absolute;
+  bottom: -15px;
+  left: 5px;
+  font-size: 10px;
+  color: red;
+}
