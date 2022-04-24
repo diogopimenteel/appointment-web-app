@@ -1,12 +1,46 @@
-# Getting Started with Create React App
+<h1 align='center'>Appointments for COVID-19 vaccination</h1>
+
+<div align="center">
+  <img alt="I took my shot" src="/.github/file-20210524-19-aq22jo.jpg" width="75%">
+</div>
+
+## Project :computer:
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+Web App created as a challenge for a job position at Pitang Agile IT.
+
+This web application is a schedule appointments for the COVID-19 Vaccine. Health professionals can make schedules, see and monitor patients appointments and conclude it when the patient took his vaccine.
+
+Focuses on managing appointments for COVID-19 vaccination, following some rules:
+
+- There are 20 vacancies available per day.
+- Only 2 appointments can be made at the same scheduled time.
+- The time interval between one schedule and another is 1 hour.
+- It will only be possible to schedule appointments between 6 AM and 6 PM.
+- The patient must inform his/her name, date of birth and day and time for the scheduling.
+
+## Clone this project :octocat:
+### SSH
+Using the command:
+
+```sh
+git@github.com:diogopimenteel/appointment-web-app.git
+```
+
+### HTTPS
+Using the command:
+
+```sh
+https://github.com/diogopimenteel/appointment-web-app.git
+```
+
+
+## Available Scripts :memo:
 
 In the project directory, you can run:
 
-### `npm start`
+### `npm start` or `npm run start`
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
