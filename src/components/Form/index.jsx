@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+/* eslint-disable no-unused-expressions */
+import React, { useEffect } from 'react';
 import {
-  Formik, Form, Field, ErrorMessage,
+  Formik, Form, Field, ErrorMessage, useFormik,
 } from 'formik';
 import { toast } from 'react-toastify';
 import {
@@ -10,12 +11,7 @@ import {
 import api from '../../services/api';
 import inputValidation from '../../services/validations/input-validation';
 import DateInput from '../DateInput';
-
-const initialValues = {
-  name: '',
-  birthday: null,
-  selectedDate: null,
-};
+import { getData, storeData } from './useAsyncStorage';
 
 const updateTime = (date) => {
   const currentDate = new Date();
@@ -27,10 +23,6 @@ const updateTime = (date) => {
 const currentTime = new Date();
 
 function AppointmentForm() {
-  const [name, setName] = useState('');
-  const [birthday, setBirthday] = useState('');
-  const [selectedDate, setSelectedDate] = useState('');
-
   const onPost = async (body) => {
     await api
       .post('/appointment', body)
@@ -41,14 +33,29 @@ function AppointmentForm() {
         toast.error(error.response.data.message);
       });
   };
+  const initialValues = useFormik({
+    initialValues: {
+      name: '',
+      birthday: null,
+      selectedDate: null,
+    },
+  });
+
+  useEffect(() => {
+    getData('keyName').then((savedValue) => {
+      savedValue && initialValues.setFieldValue('name', savedValue);
+    });
+    getData('keyBirthday').then((savedValue) => {
+      savedValue && initialValues.setFieldValue('name', savedValue);
+    });
+  }, []);
 
   return (
     <Formik
-      initialValues={initialValues}
+      initialValues={initialValues.values}
       validationSchema={inputValidation}
       onSubmit={onPost}
       enableReinitialize
-
     >
       {(formik) => (
         <Form className="form">
@@ -61,10 +68,10 @@ function AppointmentForm() {
               name="name"
               placeholder="Patient Name"
               data-testid="name-form-test"
-              value={name}
+              value={formik.values.name}
               onChange={(event) => {
-                setName(event.target.value);
-                formik.handleChange(event);
+                formik.setFieldValue('name', event.target.value);
+                storeData('keyName', event.target.value);
               }}
             />
             <ErrorMessage
@@ -78,16 +85,14 @@ function AppointmentForm() {
           <br />
           <DateInput
             name="birthday"
-            type="date"
             label="Patient Birthday"
             maxDate={new Date()}
             data-testid="birthday-form-test"
-            onChange={(date) => {
-              setBirthday(date);
-              formik.setFieldValue('birthday', date);
+            value={formik.values.birthday}
+            onChange={(event) => {
+              formik.setFieldValue('birthday', event.target.value);
+              storeData('keyBirthday', event.target.value);
             }}
-            selected={birthday}
-            dateFormat="dd/MM/yyyy"
           />
 
           <br />
@@ -97,15 +102,15 @@ function AppointmentForm() {
             showTimeSelect
             minDate={new Date()}
             minTime={setHours(setMinutes(currentTime, 0), 6)}
-            maxTime={setHours(setMinutes(currentTime, 30), 18)}
+            maxTime={setHours(setMinutes(currentTime, 0), 18)}
+            timeIntervals={60}
             filterTime={updateTime}
             data-testid="date-form-test"
-            onChange={(date) => {
-              setSelectedDate(date);
-              formik.setFieldValue('selectedDate', date);
+            value={formik.values.selectedDate}
+            onChange={(event) => {
+              formik.setFieldValue('selectedDate', event.target.value);
+              storeData('keySelectedDate', event.target.value);
             }}
-            selected={selectedDate}
-            dateFormat="dd/MM/yyyy HH:mm"
           />
 
           <br />

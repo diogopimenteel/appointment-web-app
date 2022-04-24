@@ -24,8 +24,8 @@ function DateInput(props) {
               {...field}
               {...otherProps}
               dateFormat={
-                otherProps.showTimeSelect ? 'dd/MM/yyyy - HH:mm' : 'dd/MM/yyyy'
-              }
+                 otherProps.showTimeSelect ? 'dd/MM/yyyy - HH:mm' : 'dd/MM/yyyy'
+               }
               withPortal
               placeholderText={label}
               selected={value}
@@ -33,6 +33,8 @@ function DateInput(props) {
               showMonthDropdown
               showYearDropdown
               dropdownMode="select"
+              strictParsing
+              isClearable
             />
           );
         }}
