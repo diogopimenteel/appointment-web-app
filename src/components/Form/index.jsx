@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-expressions */
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   Formik, Form, Field, ErrorMessage, useFormik,
 } from 'formik';
@@ -23,6 +23,8 @@ const updateTime = (date) => {
 const currentTime = new Date();
 
 function AppointmentForm() {
+  // eslint-disable-next-line no-unused-vars
+  const [startDate, setStartDate] = useState(new Date());
   const onPost = async (body) => {
     await api
       .post('/appointment', body)
@@ -33,11 +35,12 @@ function AppointmentForm() {
         toast.error(error.response.data.message);
       });
   };
+
   const initialValues = useFormik({
     initialValues: {
       name: '',
-      birthday: null,
-      selectedDate: null,
+      birthday: startDate,
+      selectedDate: startDate,
     },
   });
 
