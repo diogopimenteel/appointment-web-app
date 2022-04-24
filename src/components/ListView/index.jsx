@@ -62,7 +62,7 @@ function AppointmentList() {
   );
 
   return (
-    <Table className="table table-hover" responsive="md" data-test-id="show-appointments-test">
+    <Table className="table table-hover" responsive="md" data-testid="show-appointments-test">
       <thead>
         <tr align="center">
           <th>Patient Name</th>

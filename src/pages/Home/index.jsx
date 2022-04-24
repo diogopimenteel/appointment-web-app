@@ -9,8 +9,8 @@ function Home() {
     <Layout title="Protect Yourself. Get the COVID-19 vaccine!">
       <Card.Body>
         <Card.Img
-          fluid="true"
-          src="/Images/file-20210524-19-aq22jo.jpg"
+          //
+          src="/images/file-20210524-19-aq22jo.jpg"
           width="550"
           height="550"
         />

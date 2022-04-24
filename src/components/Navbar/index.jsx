@@ -3,11 +3,11 @@ import { Navbar, Image } from 'react-bootstrap';
 
 function index() {
   return (
-    <Navbar sticky="top" bg="dark" variant="dark" expand="lg" data-test-id="navbar-test">
+    <Navbar sticky="top" bg="dark" variant="dark" expand="lg" data-testid="navbar-test">
       <Navbar.Brand href="/">
         <Image
           className="d-inline-block align-center"
-          src="/Images/oms-logo.jpg"
+          src="/images/logo.jpg"
           thumbnail="true"
           roundedCircle="true"
           width="65"

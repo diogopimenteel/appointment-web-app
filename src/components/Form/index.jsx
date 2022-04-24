@@ -28,8 +28,8 @@ const currentTime = new Date();
 
 function AppointmentForm() {
   const [name, setName] = useState('');
-  const [birthday, setBirthday] = useState(null);
-  const [selectedDate, setSelectedDate] = useState(null);
+  const [birthday, setBirthday] = useState('');
+  const [selectedDate, setSelectedDate] = useState('');
 
   const onPost = async (body) => {
     await api
@@ -60,7 +60,7 @@ function AppointmentForm() {
               id="name"
               name="name"
               placeholder="Patient Name"
-              data-test-id="name-form-test"
+              data-testid="name-form-test"
               value={name}
               onChange={(event) => {
                 setName(event.target.value);
@@ -71,7 +71,7 @@ function AppointmentForm() {
               component="span"
               className="error"
               name="name"
-              data-test-id="error-name-test"
+              data-testid="error-name-test"
             />
           </div>
 
@@ -81,7 +81,7 @@ function AppointmentForm() {
             type="date"
             label="Patient Birthday"
             maxDate={new Date()}
-            data-test-id="birthday-form-test"
+            data-testid="birthday-form-test"
             onChange={(date) => {
               setBirthday(date);
               formik.setFieldValue('birthday', date);
@@ -99,7 +99,7 @@ function AppointmentForm() {
             minTime={setHours(setMinutes(currentTime, 0), 6)}
             maxTime={setHours(setMinutes(currentTime, 30), 18)}
             filterTime={updateTime}
-            data-test-id="date-form-test"
+            data-testid="date-form-test"
             onChange={(date) => {
               setSelectedDate(date);
               formik.setFieldValue('selectedDate', date);
@@ -114,7 +114,7 @@ function AppointmentForm() {
               className="btn btn-primary btn-md"
               type="submit"
               disabled={!formik.dirty && formik.isValid}
-              data-test-id="button-form-test"
+              data-testid="button-form-test"
             >
               Create Appointment
             </button>

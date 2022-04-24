@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot 1`] = `
+<div
+  className="mt-4 container"
+  data-testid="layout-test"
+>
+  <div
+    align="center"
+  >
+    <div
+      className="card text-center card"
+      data-testid="card-test"
+    >
+      <div
+        className="card-header"
+      >
+        <div
+          className="card-title h5"
+        >
+          Test
+        </div>
+      </div>
+      <div
+        className="card-body"
+      />
+    </div>
+  </div>
+</div>
+`;

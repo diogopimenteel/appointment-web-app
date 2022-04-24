@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot 1`] = `
+<nav
+  className="navbar navbar-expand-lg navbar-dark bg-dark sticky-top"
+  data-testid="navbar-test"
+>
+  <a
+    className="navbar-brand"
+    href="/"
+  >
+    <img
+      className="d-inline-block align-center rounded-circle img-thumbnail"
+      height="65"
+      src="/images/logo.jpg"
+      width="65"
+    />
+     
+    Appointments for COVID-19 vaccination
+  </a>
+</nav>
+`;
