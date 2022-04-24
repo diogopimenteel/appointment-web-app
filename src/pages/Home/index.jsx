@@ -10,14 +10,13 @@ function Home() {
       <Card.Body>
         <Card.Img
           fluid="true"
-          roundedcircle="true"
           src="/Images/file-20210524-19-aq22jo.jpg"
           width="550"
           height="550"
         />
         <Card.Title>
-          This web application is a that can schedule appointments
-          for the COVID-19 Vaccine. Patients can make schedules and nurses can see and monitor
+          This web application is a schedule appointments
+          for the COVID-19 Vaccine. Health professionals can make schedules, see and monitor
           patients appointments and conclude it when the patient took his vaccine.
         </Card.Title>
         <Link to="/appointment/new">

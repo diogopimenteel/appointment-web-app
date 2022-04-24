@@ -9,7 +9,7 @@ function index() {
           className="d-inline-block align-center"
           src="/Images/oms-logo.jpg"
           thumbnail="true"
-          rounded="true"
+          roundedCircle="true"
           width="65"
           height="65"
         />
