@@ -37,7 +37,7 @@ function AppointmentList() {
     });
 
     await api
-      .put(`/appointment/${appointment._id}`, {
+      .patch(`/appointment/${appointment._id}`, {
         ...appointment,
         attended: checked,
       })
