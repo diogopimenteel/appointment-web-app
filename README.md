@@ -5,8 +5,15 @@
   <img alt="I took my shot" src="/.github/file-20210524-19-aq22jo.jpg" width="75%">
 </div>
 
-## Project :computer:
+## Live example: [Appointment App](https://appointment-client.netlify.app/) :rocket:
 
+- Frontend application hosted on [Netlify](https://www.netlify.com/)
+
+- Backend API hosted on [Heroku](https://www.heroku.com/)
+
+- MongoDB hosted on [MongoDB Atlas](https://www.mongodb.com/atlas)
+
+## Project :computer:
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 Web App created as a challenge for a job position at Pitang Agile IT.
@@ -20,6 +27,7 @@ Focuses on managing appointments for COVID-19 vaccination, following some rules:
 - The time interval between one schedule and another is 1 hour.
 - It will only be possible to schedule appointments between 6 AM and 6 PM.
 - The patient must inform his/her name, date of birth and day and time for the scheduling.
+
 
 ## Clone this project :octocat:
 ### SSH
