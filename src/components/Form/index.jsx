@@ -106,7 +106,7 @@ function AppointmentForm() {
             showTimeSelect
             minDate={new Date()}
             minTime={setHours(setMinutes(currentTime, 0), 6)}
-            maxTime={setHours(setMinutes(currentTime, 0), 19)}
+            maxTime={setHours(setMinutes(currentTime, 0), 18)}
             timeIntervals={60}
             filterTime={updateTime}
             data-testid="date-form-test"
