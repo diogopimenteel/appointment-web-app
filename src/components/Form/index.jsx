@@ -24,6 +24,7 @@ const currentTime = new Date();
 
 function AppointmentForm() {
   const onPost = async (body) => {
+    body.selectedDate.setHours(body.selectedDate.getHours() - 3);
     await api
       .post('/appointment', body)
       .then(() => {
