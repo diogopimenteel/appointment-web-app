@@ -12,7 +12,6 @@ const inputValidation = yup.object().shape({
     .required('Birthday field is required!'),
   selectedDate: yup.date()
     .nullable()
-    .min(new Date(), 'The patient must make the appointment from the current time')
     .required('Selected date is required!'),
 });
 

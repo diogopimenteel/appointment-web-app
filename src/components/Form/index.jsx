@@ -24,7 +24,6 @@ const currentTime = new Date();
 
 function AppointmentForm() {
   const onPost = async (body) => {
-    body.selectedDate.setHours(body.selectedDate.getHours() - 3);
     await api
       .post('/appointment', body)
       .then(() => {
@@ -107,7 +106,7 @@ function AppointmentForm() {
             showTimeSelect
             minDate={new Date()}
             minTime={setHours(setMinutes(currentTime, 0), 6)}
-            maxTime={setHours(setMinutes(currentTime, 0), 18)}
+            maxTime={setHours(setMinutes(currentTime, 0), 19)}
             timeIntervals={60}
             filterTime={updateTime}
             data-testid="date-form-test"
