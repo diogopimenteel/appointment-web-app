@@ -1,3 +1,4 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/1baac373-d798-44dd-9c19-d906783158c9/deploy-status)](https://app.netlify.com/sites/appointment-client/deploys)
 <h1 align='center'>Appointments for COVID-19 vaccination</h1>
 
 <div align="center">

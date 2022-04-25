@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-expressions */
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import {
   Formik, Form, Field, ErrorMessage, useFormik,
 } from 'formik';
@@ -23,8 +23,6 @@ const updateTime = (date) => {
 const currentTime = new Date();
 
 function AppointmentForm() {
-  // eslint-disable-next-line no-unused-vars
-  const [startDate, setStartDate] = useState(new Date());
   const onPost = async (body) => {
     await api
       .post('/appointment', body)
@@ -39,8 +37,8 @@ function AppointmentForm() {
   const initialValues = useFormik({
     initialValues: {
       name: '',
-      birthday: startDate,
-      selectedDate: startDate,
+      birthday: null,
+      selectedDate: null,
     },
   });
 
@@ -49,6 +47,9 @@ function AppointmentForm() {
       savedValue && initialValues.setFieldValue('name', savedValue);
     });
     getData('keyBirthday').then((savedValue) => {
+      savedValue && initialValues.setFieldValue('name', savedValue);
+    });
+    getData('keySelectedDate').then((savedValue) => {
       savedValue && initialValues.setFieldValue('name', savedValue);
     });
   }, []);
@@ -109,7 +110,7 @@ function AppointmentForm() {
             timeIntervals={60}
             filterTime={updateTime}
             data-testid="date-form-test"
-            value={formik.values.selectedDate}
+            value={formik.values.startDate}
             onChange={(event) => {
               formik.setFieldValue('selectedDate', event.target.value);
               storeData('keySelectedDate', event.target.value);
